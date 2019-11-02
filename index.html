@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Testing Final-02 </title>
+    <script src="aframe/library/aframe.min.js"></script>
+    <!-- include aframe-ar.js -->
+    <script src="aframe/library/aframe-ar.js"></script>
+    <!-- include text geometry -->
+    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+    <!-- Hide Debug UI -->
+    <!--
+    <style>
+        #arjsDebugUIContainer {
+            display: none;
+            visibility: hidden;
+        }
+    </style>
+-->
+</head>
+<a-assets>
+    <a-asset-item id="10" src="./assets/gambar10.jpg"></a-asset-item>
+    <a-asset-item id="11" src="./assets/gambar11.jpg"></a-asset-item>
+    <a-asset-item id="22" src="./assets/gambar22.jpg"></a-asset-item>
+    <a-asset-item id="33" src="./assets/gambar33.jpg"></a-asset-item>
+    <a-asset-item id="44" src="./assets/gambar44.jpg"></a-asset-item>
+    <a-asset-item id="55" src="./assets/gambar55.jpg"></a-asset-item>
+
+
+
+<a-asset-item id="exoItalicFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725"></a-asset-item>
+</a-assets>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+    <a-scene embedded arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;'>
+        <!-- handle unknown marker -->
+        <!-- <a-marker type='unknown'>
+			<a-box depth="1" height="1" width="1" position='0 0.5 0' material='opacity: 0.5; side:double; color:blue;'></a-box>
+		</a-marker> -->
+
+
+        <!-- handle matrix marker -->
+        <a-marker type='barcode' value='0'>
+            <a-plane width="8" height="6.5" position="-3 0 -2" rotation="-90 0 0" color="white">
+            <a-plane width="6" height="6" src="#10" position="0 0 0.5">
+<!--                <a-text value="Kio" color="#111" position="0 -2.5 0" align="center"></a-text>-->
+           <a-entity position="0 -2.5 0" text-geometry="value: Kiosk Peminjaman; font: #exoItalicFont; style: italic; size: 0.4; weight: bold; height: 0;"
+                  material="shader: flat; color: blue"></a-entity>
+            </a-plane>
+            </a-plane>
+        </a-marker>
+        
+        <a-marker type='barcode' value='1'>
+            <a-plane width="8" height="6.5" position="-3 0 -2" rotation="-90 0 0" color="white">
+            <a-plane width="6" height="6" src="#11" position="0 0 0.5">
+<!--                <a-text value="Kio" color="#111" position="0 -2.5 0" align="center"></a-text>-->
+           <a-entity position="0 -2.5 0" text-geometry="value: Book Drop; font: #exoItalicFont; style: italic; size: 0.4; weight: bold; height: 0;"
+                  material="shader: flat; color: blue"></a-entity>
+            </a-plane>
+            </a-plane>
+        </a-marker>
+        
+        <a-marker type='barcode' value='2'>
+            <a-plane width="8" height="6.5" position="-3 0 -2" rotation="-90 0 0" color="white">
+            <a-plane width="6" height="6" src="#22" position="0 0 0.5">
+<!--                <a-text value="Kio" color="#111" position="0 -2.5 0" align="center"></a-text>-->
+           <a-entity position="0 -2.5 0" text-geometry="value: Kiosk Printing KKI; font: #exoItalicFont; style: italic; size: 0.4; weight: bold; height: 0;"
+                  material="shader: flat; color: blue"></a-entity>
+            </a-plane>
+            </a-plane>
+        </a-marker>
+        
+                <a-marker type='barcode' value='3'>
+            <a-plane width="8" height="6.5" position="-3 0 -2" rotation="-90 0 0" color="white">
+            <a-plane width="6" height="6" src="#33" position="0 0 0.5">
+<!--                <a-text value="Kio" color="#111" position="0 -2.5 0" align="center"></a-text>-->
+           <a-entity position="0 -2.5 0" text-geometry="value: Kiosk Navigasi; font: #exoItalicFont; style: italic; size: 0.4; weight: bold; height: 0;"
+                  material="shader: flat; color: blue"></a-entity>
+            </a-plane>
+            </a-plane>
+        </a-marker>
+        
+                <a-marker type='barcode' value='4'>
+            <a-plane width="8" height="6.5" position="-3 0 -2" rotation="-90 0 0" color="white">
+            <a-plane width="6" height="6" src="#44" position="0 0 0.5">
+<!--                <a-text value="Kio" color="#111" position="0 -2.5 0" align="center"></a-text>-->
+           <a-entity position="0 -2.5 0" text-geometry="value: Kiosk Survey; font: #exoItalicFont; style: italic; size: 0.4; weight: bold; height: 0;"
+                  material="shader: flat; color: blue"></a-entity>
+            </a-plane>
+            </a-plane>
+        </a-marker>
+        
+                <a-marker type='barcode' value='5'>
+            <a-plane width="8" height="6.5" position="-3 0 -2" rotation="-90 0 0" color="white">
+            <a-plane width="6" height="6" src="#55" position="0 0 0.5">
+<!--                <a-text value="Kio" color="#111" position="0 -2.5 0" align="center"></a-text>-->
+           <a-entity position="0 -2.5 0" text-geometry="value: CCTV Keamanan; font: #exoItalicFont; style: italic; size: 0.4; weight: bold; height: 0;"
+                  material="shader: flat; color: blue"></a-entity>
+            </a-plane>
+            </a-plane>
+        </a-marker>
+        
+
+        <!-- add a simple camera -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>
